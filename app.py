@@ -166,32 +166,25 @@ def upload_library():
 
 
 def process_library(xml_path):
-    #This code parses the XML file.
-
+    #This code parses the XML file
     try:
         tree = ET.parse(xml_path)
         root = tree.getroot()
-
-        # Fine the colletion element
         collection = root.find('COLLECTION')
-
-        # Find all tracks within the collection
         tracks = collection.findall('TRACK')
 
         print(f"Found {len(tracks)} tracks in the XML file.")
 
-        return {"message": f"Found {len(tracks)} tracks."}
+        #loop through each track and print all its attributes
+        for track in tracks:
+            print("\n--- New Track ---")
+            for key, value in track.attrib.items():
+                print (f"{key}: {value}")
+
+        return {"message": "XML attributes printed to console."}
 
     except Exception as e:
         return {"error": f"Failed to process XML: {e}"}
-
-
-        # Print the root tag to verify the file was read correctly
-        print(f"Root tag found: {root.tag}")
-        return {"message": "XML file processed successfully"}
-    except Exception as e:
-        return {"error": f"Failed to process XML: {e}"}
-
 
 
 if __name__ == '__main__':
