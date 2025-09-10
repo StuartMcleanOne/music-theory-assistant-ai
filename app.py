@@ -166,26 +166,44 @@ def upload_library():
 
 
 def process_library(xml_path):
-    #This code parses the XML file
     try:
         tree = ET.parse(xml_path)
         root = tree.getroot()
+
         collection = root.find('COLLECTION')
         tracks = collection.findall('TRACK')
 
         print(f"Found {len(tracks)} tracks in the XML file.")
 
-        #loop through each track and print all its attributes
         for track in tracks:
-            print("\n--- New Track ---")
-            for key, value in track.attrib.items():
-                print (f"{key}: {value}")
+            track_name = track.get('Name')
+            artist = track.get('Artist')
+            bpm = track.get('AverageBpm')
+            track_key = track.get('Tonality')
+            genre = track.get('Genre')
+            label = track.get('Label')
+            comments = track.get('Comments')
+            grouping = track.get('Grouping')
 
-        return {"message": "XML attributes printed to console."}
+            # Find the nested TAGS element
+            tags_element = track.find('TAGS')
+
+            # This list will hold all the tags for a single track.
+            tags = []
+            if tags_element is not None:
+
+                # Loop through each tag inside the TAGS element.
+                for tag in tags_element.findall('TAG'):
+                    tags.append(tag.get('NAME'))
+
+            print(f"Name: {track_name}, Artist: {artist}, BPM: {bpm}, Key: {track_key}")
+            print(f"Genre: {genre}, Label: {label}, Comments: {comments}, Grouping: {grouping}")
+            print(f"Tags: {', '.join(tags)}") # Joins the list into a comma-separated string.
+
+        return {"message": "XML file processed successfully."}
 
     except Exception as e:
         return {"error": f"Failed to process XML: {e}"}
-
 
 if __name__ == '__main__':
     app.run(debug=True)
