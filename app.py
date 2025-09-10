@@ -5,10 +5,6 @@ import os
 
 app = Flask(__name__)
 
-'''
-Creates a new connection to the database.
-'''
-
 
 def get_db_connection():
     """
@@ -17,6 +13,64 @@ def get_db_connection():
     conn = sqlite3.connect('tag_genius.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+
+@app.cli.command('init-db')
+def init_db():
+    """
+    Initializes the database by creating the tracks table.
+    """
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS tracks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            artist TEXT,
+            bpm REAL,
+            track_key TEXT,
+            genre TEXT,
+            label TEXT,
+            comments TEXT,
+            grouping TEXT,
+            tags TEXT
+        );
+    """)
+    conn.commit()
+    conn.close()
+    print('Database initialized successfully.')
+
+
+def insert_track_data(name, artist, bpm, track_key, genre, label, comments, grouping, tags):
+    """
+    Inserts a single track's metadata into the database.
+    """
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        # Check if a track with the same name and artist already exists to avoid duplicates.
+        cursor.execute("SELECT id FROM tracks WHERE name = ? AND artist = ?", (name, artist))
+        existing_track = cursor.fetchone()
+
+        if existing_track:
+            print(f"Skipping duplicate track: {name} by {artist}")
+            return
+
+        # Insert the new track data into the tracks table.
+        cursor.execute("""
+            INSERT INTO tracks (name, artist, bpm, track_key, genre, label, comments, grouping, tags)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (name, artist, bpm, track_key, genre, label, comments, grouping, tags))
+
+        conn.commit()
+        print(f"Successfully inserted: {name} by {artist}")
+
+    except sqlite3.Error as e:
+        conn.rollback()
+        print(f"Database error: {e}")
+    finally:
+        conn.close()
 
 
 @app.route('/')
@@ -47,16 +101,16 @@ def add_track():
     """
     data = request.get_json()
     name = data.get('name')
-    description = data.get('description')
+    artist = data.get('artist')
 
-    if not name or not description:
-        return jsonify({"error": "Name and description are required."}), 400
+    if not name or not artist:
+        return jsonify({"error": "Name and artist are required."}), 400
 
     conn = get_db_connection()
     cursor = conn.cursor()
 
     try:
-        cursor.execute("INSERT INTO tracks (name, description) VALUES (?, ?)", (name, description))
+        cursor.execute("INSERT INTO tracks (name, artist) VALUES (?, ?)", (name, artist))
         conn.commit()
         return jsonify({"message": "Track added successfully."}), 201
     except sqlite3.Error as e:
@@ -113,10 +167,10 @@ def update_track(track_id):
     """
     data = request.get_json()
     name = data.get('name')
-    description = data.get('description')
+    artist = data.get('artist')
 
-    if not name or not description:
-        return jsonify({"error": "Name and description are required"}), 400
+    if not name or not artist:
+        return jsonify({"error": "Name and artist are required"}), 400
 
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -128,8 +182,8 @@ def update_track(track_id):
         if track is None:
             return jsonify({"error": "Track not found"}), 404
 
-        cursor.execute("UPDATE tracks SET name = ?, description = ? WHERE id = ?",
-                       (name, description, track_id))
+        cursor.execute("UPDATE tracks SET name = ?, artist = ? WHERE id = ?",
+                       (name, artist, track_id))
 
         conn.commit()
         return jsonify({"message": "Track updated successfully"}), 200
@@ -138,6 +192,7 @@ def update_track(track_id):
         return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
+
 
 @app.route('/upload_library', methods=['POST'])
 def upload_library():
@@ -166,10 +221,12 @@ def upload_library():
 
 
 def process_library(xml_path):
+    """
+    Parses the XML file, extracts track data, and inserts it into the database.
+    """
     try:
         tree = ET.parse(xml_path)
         root = tree.getroot()
-
         collection = root.find('COLLECTION')
         tracks = collection.findall('TRACK')
 
@@ -185,25 +242,21 @@ def process_library(xml_path):
             comments = track.get('Comments')
             grouping = track.get('Grouping')
 
-            # Find the nested TAGS element
             tags_element = track.find('TAGS')
-
-            # This list will hold all the tags for a single track.
             tags = []
             if tags_element is not None:
-
-                # Loop through each tag inside the TAGS element.
                 for tag in tags_element.findall('TAG'):
                     tags.append(tag.get('NAME'))
+            tags_string = ', '.join(tags)
 
-            print(f"Name: {track_name}, Artist: {artist}, BPM: {bpm}, Key: {track_key}")
-            print(f"Genre: {genre}, Label: {label}, Comments: {comments}, Grouping: {grouping}")
-            print(f"Tags: {', '.join(tags)}") # Joins the list into a comma-separated string.
+            # Insert the track data into the database
+            insert_track_data(track_name, artist, bpm, track_key, genre, label, comments, grouping, tags_string)
 
-        return {"message": "XML file processed successfully."}
+        return {"message": "XML file processed and data inserted into the database."}
 
     except Exception as e:
         return {"error": f"Failed to process XML: {e}"}
+
 
 if __name__ == '__main__':
     app.run(debug=True)
