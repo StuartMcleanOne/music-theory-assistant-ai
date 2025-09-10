@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import xml.etree.ElementTree as ET
 import sqlite3
 import os
 
@@ -13,8 +14,8 @@ def get_db_connection():
     """
     Establishes a connection to the SQLite database.
     """
-    conn = sqlite3.connect('music_theory.db')
-    conn.row_factory = sqlite3.Row  # Allows for data access by column name.
+    conn = sqlite3.connect('tag_genius.db')
+    conn.row_factory = sqlite3.Row
     return conn
 
 
@@ -138,11 +139,10 @@ def update_track(track_id):
     finally:
         conn.close()
 
-
 @app.route('/upload_library', methods=['POST'])
 def upload_library():
     """
-    Handles the upload of a music library XML file.
+    Handles the upload of a music library XML file and starts the parsing process.
     """
     if 'file' not in request.files:
         return jsonify({"error": "No file part in the request"}), 400
@@ -156,9 +156,42 @@ def upload_library():
         file_path = os.path.join("uploads", file.filename)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         file.save(file_path)
-        return jsonify({"message": "File uploaded successfully"}), 200
+
+        # Call the processing function after saving the file
+        processing_result = process_library(file_path)
+
+        return jsonify(processing_result), 200
 
     return jsonify({"error": "An unknown error occurred"}), 500
+
+
+def process_library(xml_path):
+    #This code parses the XML file.
+
+    try:
+        tree = ET.parse(xml_path)
+        root = tree.getroot()
+
+        # Fine the colletion element
+        collection = root.find('COLLECTION')
+
+        # Find all tracks within the collection
+        tracks = collection.findall('TRACK')
+
+        print(f"Found {len(tracks)} tracks in the XML file.")
+
+        return {"message": f"Found {len(tracks)} tracks."}
+
+    except Exception as e:
+        return {"error": f"Failed to process XML: {e}"}
+
+
+        # Print the root tag to verify the file was read correctly
+        print(f"Root tag found: {root.tag}")
+        return {"message": "XML file processed successfully"}
+    except Exception as e:
+        return {"error": f"Failed to process XML: {e}"}
+
 
 
 if __name__ == '__main__':

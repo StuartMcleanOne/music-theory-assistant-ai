@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DJ_PLAYLISTS Version="1.0.0">
+  <PRODUCT Name="rekordbox" Version="7.2.2" Company="AlphaTheta"/>
+  <COLLECTION Entries="23">
+    <TRACK TrackID="258593490" Name="Starlight - Radio Edit" Artist="The Supermen Lovers, Mani Hoffman"
+           Composer="" Album="Starlight" Grouping="" Genre="" Kind="FLAC File"
+           Size="48593887" TotalTime="234" DiscNumber="0" TrackNumber="1"
+           Year="2001" AverageBpm="127.50" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/The%20Supermen%20Lovers,%20Mani%20Hoffman%20-%20%20Starlight%20-%20Radio%20Edit.flac"
+           Remixer="" Tonality="5A" Label="" Mix="">
+      <TEMPO Inizio="0.057" Bpm="127.50" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="213765442" Name="Visit By Cap Kendricks" Artist="Funky Notes, Cap Kendricks"
+           Composer="" Album="Second Home" Grouping="" Genre="" Kind="FLAC File"
+           Size="37982190" TotalTime="195" DiscNumber="0" TrackNumber="5"
+           Year="2019" AverageBpm="84.00" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Funky%20Notes,%20Cap%20Kendricks%20-%20%20Visit%20By%20Cap%20Kendricks.flac"
+           Remixer="" Tonality="10A" Label="" Mix="">
+      <TEMPO Inizio="0.235" Bpm="84.00" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="233093992" Name="Sing It Back - Boris Dlugosch Mix"
+           Artist="Moloko, Boris Dlugosch, Michael Lange" Composer="" Album="Catalogue"
+           Grouping="" Genre="" Kind="FLAC File" Size="58529658" TotalTime="277"
+           DiscNumber="0" TrackNumber="2" Year="2006" AverageBpm="122.99"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Moloko,%20Boris%20Dlugosch,%20Michael%20Lange%20-%20%20Sing%20It%20Back%20-%20Boris%20Dlugosch%20Mix.flac"
+           Remixer="" Tonality="2A" Label="" Mix="">
+      <TEMPO Inizio="0.223" Bpm="122.99" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="136462423" Name="Music Sounds Better With You - Radio Edit"
+           Artist="Stardust" Composer="" Album="Music Sounds Better With You"
+           Grouping="" Genre="" Kind="FLAC File" Size="56967752" TotalTime="260"
+           DiscNumber="0" TrackNumber="2" Year="1998" AverageBpm="124.21"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Stardust%20-%20%20Music%20Sounds%20Better%20With%20You%20-%20Radio%20Edit.flac"
+           Remixer="" Tonality="4A" Label="" Mix="">
+      <TEMPO Inizio="0.114" Bpm="124.21" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="92.859" Bpm="124.21" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="166.765" Bpm="124.21" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="240.671" Bpm="124.21" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="150329395" Name="Where&apos;s Your Head At" Artist="Basement Jaxx"
+           Composer="" Album="Rooty" Grouping="" Genre="" Kind="FLAC File"
+           Size="60827095" TotalTime="285" DiscNumber="0" TrackNumber="9"
+           Year="2001" AverageBpm="127.92" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Basement%20Jaxx%20-%20%20Where%27s%20Your%20Head%20At.flac"
+           Remixer="" Tonality="8B" Label="" Mix="">
+      <TEMPO Inizio="0.183" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="4.405" Bpm="127.92" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="20.353" Bpm="127.92" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="35.832" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="51.311" Bpm="127.92" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="66.790" Bpm="127.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="82.269" Bpm="127.92" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="97.748" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="113.227" Bpm="127.92" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="129.175" Bpm="127.92" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="144.654" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="160.133" Bpm="127.92" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="175.612" Bpm="127.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="191.091" Bpm="127.92" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="206.570" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="222.518" Bpm="127.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="237.997" Bpm="127.92" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="253.476" Bpm="127.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="268.955" Bpm="127.92" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="284.434" Bpm="127.92" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="21875388" Name="Ya Mama" Artist="Fatboy Slim" Composer=""
+           Album="Halfway Between the Gutter and the Stars" Grouping=""
+           Genre="" Kind="FLAC File" Size="74823971" TotalTime="337" DiscNumber="0"
+           TrackNumber="5" Year="2000" AverageBpm="118.81" DateAdded="2025-09-09"
+           BitRate="0" SampleRate="48000" Comments="" PlayCount="0" Rating="0"
+           Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Fatboy%20Slim%20-%20%20Ya%20Mama.flac"
+           Remixer="" Tonality="12B" Label="" Mix="">
+      <TEMPO Inizio="0.037" Bpm="117.68" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="0.542" Bpm="117.68" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="1.075" Bpm="117.68" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="1.589" Bpm="117.68" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="2.076" Bpm="118.00" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="2.591" Bpm="118.00" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="3.115" Bpm="118.00" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="3.629" Bpm="118.00" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="4.125" Bpm="118.26" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="4.612" Bpm="118.26" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="5.136" Bpm="118.26" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="5.650" Bpm="118.26" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="6.137" Bpm="118.57" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="6.633" Bpm="118.57" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="7.157" Bpm="118.57" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="7.681" Bpm="118.57" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="8.168" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="8.664" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="9.197" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="9.684" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="10.189" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="10.685" Bpm="118.70" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="11.218" Bpm="118.70" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="11.705" Bpm="118.70" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="12.219" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="12.706" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="13.230" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="13.726" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="14.241" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="14.737" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="15.233" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="15.747" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="16.262" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="18.283" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="19.790" Bpm="118.60" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="20.304" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="20.810" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="22.326" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="24.347" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="28.389" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="30.411" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="32.432" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="32.946" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="33.948" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="34.453" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="36.474" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="37.494" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="38.505" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="40.012" Bpm="118.60" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="40.526" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="42.547" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="43.053" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="44.569" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="48.097" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="48.611" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="49.126" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="50.642" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="52.148" Bpm="118.60" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="52.663" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="54.170" Bpm="118.74" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="54.675" Bpm="118.85" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="55.189" Bpm="118.85" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="55.695" Bpm="118.85" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="56.705" Bpm="118.79" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="57.201" Bpm="118.79" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="57.716" Bpm="118.79" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="58.717" Bpm="118.76" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="59.223" Bpm="118.76" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="60.230" Bpm="118.76" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="60.735" Bpm="118.75" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="61.250" Bpm="118.75" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="62.765" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="64.787" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="66.808" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="68.829" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="70.850" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="71.356" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="72.872" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="73.386" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="73.892" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="74.388" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="76.914" Bpm="118.68" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="77.934" Bpm="118.68" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="78.430" Bpm="118.68" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="78.935" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="79.955" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="80.451" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="80.966" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="82.987" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="83.483" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="83.998" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="84.494" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="85.008" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="85.505" Bpm="118.70" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="86.019" Bpm="118.70" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="86.515" Bpm="118.70" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="87.030" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="88.536" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="89.051" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="89.565" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="90.062" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="91.081" Bpm="118.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="91.577" Bpm="118.73" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="92.083" Bpm="118.73" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="93.103" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="93.599" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="95.115" Bpm="118.77" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="96.116" Bpm="118.77" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="96.631" Bpm="118.77" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="97.145" Bpm="118.78" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="98.147" Bpm="118.78" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="98.661" Bpm="118.78" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="99.157" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="101.178" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="101.684" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="104.219" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="104.716" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="105.230" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="107.242" Bpm="118.61" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="108.262" Bpm="118.61" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="108.758" Bpm="118.61" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="109.273" Bpm="118.77" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="111.294" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="112.819" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="113.315" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="113.811" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="114.326" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="115.336" Bpm="118.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="117.358" Bpm="118.65" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="119.379" Bpm="118.72" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="120.395" Bpm="118.72" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="121.406" Bpm="118.69" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="121.902" Bpm="118.69" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="122.416" Bpm="118.69" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="123.427" Bpm="118.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="123.923" Bpm="118.73" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="124.438" Bpm="118.73" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="124.934" Bpm="118.73" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="125.448" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="125.944" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="126.459" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="127.469" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="128.976" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="129.482" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="130.005" Bpm="118.70" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="130.511" Bpm="118.70" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="131.007" Bpm="118.70" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="131.512" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="133.037" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="133.533" Bpm="118.68" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="135.554" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="136.060" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="137.585" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="138.586" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="139.101" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="139.606" Bpm="118.63" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="140.102" Bpm="118.63" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="141.122" Bpm="118.63" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="141.618" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="143.143" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="143.649" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="144.145" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="144.659" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="145.670" Bpm="118.57" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="146.166" Bpm="118.57" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="146.699" Bpm="118.57" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="147.186" Bpm="118.57" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="147.700" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="148.187" Bpm="118.60" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="148.711" Bpm="118.60" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="149.207" Bpm="118.60" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="149.722" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="150.209" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="150.741" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="151.228" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="151.743" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="152.230" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="152.763" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="153.259" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="153.773" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="154.251" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="154.775" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="155.785" Bpm="118.84" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="156.272" Bpm="118.84" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="156.796" Bpm="118.84" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="157.807" Bpm="118.80" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="158.293" Bpm="118.80" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="158.817" Bpm="118.80" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="159.332" Bpm="118.80" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="159.819" Bpm="118.80" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="160.820" Bpm="118.80" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="161.344" Bpm="118.80" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="161.849" Bpm="118.84" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="162.345" Bpm="118.84" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="162.851" Bpm="118.84" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="163.861" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="165.882" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="169.429" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="171.946" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="172.461" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="173.967" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="174.482" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="175.998" Bpm="118.76" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="177.505" Bpm="118.76" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="178.019" Bpm="118.72" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="180.037" Bpm="118.72" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="182.058" Bpm="118.65" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="183.078" Bpm="118.65" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="183.574" Bpm="118.65" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="184.079" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="185.099" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="185.595" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="186.110" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="188.627" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="189.142" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="190.143" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="191.163" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="192.670" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="193.184" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="193.680" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="194.709" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="195.224" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="195.720" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="196.216" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="196.730" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="197.732" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="198.228" Bpm="118.80" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="198.752" Bpm="118.80" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="199.753" Bpm="118.80" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="200.249" Bpm="118.77" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="200.773" Bpm="118.77" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="201.774" Bpm="118.77" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="202.271" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="202.794" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="203.300" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="203.796" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="204.292" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="204.815" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="205.817" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="206.322" Bpm="118.61" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="206.837" Bpm="118.61" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="207.838" Bpm="118.61" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="208.343" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="208.858" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="210.365" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="210.888" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="211.890" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="212.386" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="212.900" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="213.406" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="214.407" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="214.931" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="215.427" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="216.428" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="216.952" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="217.448" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="218.450" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="218.973" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="219.479" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="219.975" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="220.995" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="221.996" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="222.492" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="223.016" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="224.017" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="224.513" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="225.037" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="226.039" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="226.535" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="227.068" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="228.069" Bpm="118.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="228.565" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="229.080" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="230.586" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="231.110" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="231.606" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="232.608" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="233.131" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="233.627" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="234.629" Bpm="118.93" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="235.153" Bpm="118.93" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="235.658" Bpm="118.93" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="236.163" Bpm="118.93" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="236.659" Bpm="120.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="237.174" Bpm="120.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="237.679" Bpm="120.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="238.175" Bpm="120.64" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="238.671" Bpm="120.54" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="239.195" Bpm="120.54" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="239.700" Bpm="120.54" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="240.135" Bpm="120.54" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="240.570" Bpm="120.61" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="241.084" Bpm="120.61" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="241.589" Bpm="120.61" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="242.591" Bpm="120.37" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="243.124" Bpm="120.37" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="243.620" Bpm="120.37" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="244.125" Bpm="120.37" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="244.621" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="245.136" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="245.632" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="246.633" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="247.157" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="247.653" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="248.159" Bpm="118.74" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="248.655" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="249.178" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="249.674" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="250.180" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="250.676" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="251.209" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="251.705" Bpm="118.64" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="252.706" Bpm="118.54" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="253.221" Bpm="118.54" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="253.717" Bpm="118.54" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="254.231" Bpm="118.54" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="254.728" Bpm="118.61" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="255.242" Bpm="118.61" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="255.738" Bpm="118.61" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="256.262" Bpm="118.61" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="256.758" Bpm="118.60" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="257.272" Bpm="118.60" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="257.769" Bpm="118.60" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="258.283" Bpm="118.60" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="258.779" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="259.294" Bpm="118.64" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="260.801" Bpm="118.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="261.315" Bpm="118.73" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="261.811" Bpm="118.73" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="262.326" Bpm="118.73" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="262.822" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="263.336" Bpm="118.67" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="263.832" Bpm="118.67" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="264.347" Bpm="118.67" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="264.843" Bpm="117.38" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="265.358" Bpm="117.38" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="265.854" Bpm="117.38" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="266.368" Bpm="117.38" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="266.864" Bpm="116.81" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="267.388" Bpm="116.81" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="267.884" Bpm="116.81" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="268.399" Bpm="116.81" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="268.931" Bpm="116.91" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="269.492" Bpm="116.91" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="270.006" Bpm="116.91" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="270.539" Bpm="116.91" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="271.045" Bpm="116.98" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="271.550" Bpm="116.98" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="272.055" Bpm="116.98" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="272.561" Bpm="116.98" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="273.066" Bpm="118.23" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="273.571" Bpm="118.23" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="274.058" Bpm="118.23" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="274.573" Bpm="118.23" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="275.096" Bpm="118.84" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="275.574" Bpm="118.84" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="276.098" Bpm="118.84" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="276.594" Bpm="118.84" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="277.118" Bpm="118.71" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="277.595" Bpm="118.71" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="278.119" Bpm="118.71" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="278.615" Bpm="118.71" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="279.130" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="279.617" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="280.140" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="280.636" Bpm="118.74" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="281.160" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="281.638" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="282.161" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="282.658" Bpm="118.74" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="283.172" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="283.659" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="284.192" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="284.679" Bpm="118.74" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="285.203" Bpm="118.97" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="285.680" Bpm="118.97" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="286.204" Bpm="118.97" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="286.700" Bpm="118.97" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="287.224" Bpm="118.78" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="287.701" Bpm="118.78" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="288.216" Bpm="118.78" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="289.227" Bpm="118.81" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="289.723" Bpm="118.81" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="290.210" Bpm="118.81" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="290.733" Bpm="118.81" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="291.257" Bpm="118.77" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="291.753" Bpm="118.77" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="292.764" Bpm="118.77" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="293.269" Bpm="118.50" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="293.774" Bpm="118.50" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="294.785" Bpm="118.50" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="295.290" Bpm="118.66" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="297.312" Bpm="118.65" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="298.331" Bpm="118.65" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="300.351" Bpm="118.65" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="300.854" Bpm="118.65" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="301.360" Bpm="118.72" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="303.381" Bpm="118.63" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="305.402" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="305.908" Bpm="118.70" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="307.433" Bpm="118.64" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="309.445" Bpm="118.61" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="310.465" Bpm="118.61" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="310.961" Bpm="118.61" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="311.475" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="311.971" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="312.486" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="313.496" Bpm="118.67" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="315.518" Bpm="118.70" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="317.539" Bpm="118.74" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="318.035" Bpm="118.74" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="318.550" Bpm="118.74" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="321.581" Bpm="118.79" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="323.603" Bpm="119.19" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="324.117" Bpm="119.19" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="324.613" Bpm="119.19" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="325.109" Bpm="119.19" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="325.615" Bpm="121.50" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="326.122" Bpm="121.50" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="326.629" Bpm="121.50" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="327.136" Bpm="121.50" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="327.643" Bpm="124.20" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="328.150" Bpm="124.20" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="328.619" Bpm="124.20" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="329.078" Bpm="124.20" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="329.547" Bpm="126.98" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="330.006" Bpm="126.98" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="330.475" Bpm="126.98" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="330.934" Bpm="126.98" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="331.394" Bpm="129.46" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="331.862" Bpm="129.46" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="332.322" Bpm="129.46" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="332.781" Bpm="129.46" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="333.240" Bpm="129.78" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="333.709" Bpm="129.78" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="334.168" Bpm="129.78" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="334.628" Bpm="129.78" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="335.096" Bpm="129.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="335.556" Bpm="129.73" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="336.015" Bpm="129.73" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="336.484" Bpm="129.73" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="336.943" Bpm="129.73" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="337.402" Bpm="129.73" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="337.871" Bpm="129.73" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="61353361" Name="Red Alert" Artist="Basement Jaxx" Composer=""
+           Album="Remedy" Grouping="" Genre="" Kind="FLAC File" Size="54535522"
+           TotalTime="257" DiscNumber="0" TrackNumber="6" Year="1999" AverageBpm="126.85"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Basement%20Jaxx%20-%20%20Red%20Alert.flac"
+           Remixer="" Tonality="4A" Label="" Mix="">
+      <TEMPO Inizio="0.452" Bpm="126.85" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="82162455" Name="Can&apos;t Get Enough! - Vocal Club Mix"
+           Artist="Soulsearcher" Composer="" Album="Can&apos;t Get Enough"
+           Grouping="" Genre="" Kind="FLAC File" Size="89469883" TotalTime="409"
+           DiscNumber="0" TrackNumber="1" Year="1998" AverageBpm="128.14"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Soulsearcher%20-%20%20Can%27t%20Get%20Enough!%20-%20Vocal%20Club%20Mix.flac"
+           Remixer="" Tonality="9A" Label="" Mix="">
+      <TEMPO Inizio="0.207" Bpm="128.14" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="20.810" Bpm="128.14" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="137.870" Bpm="128.14" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="264.763" Bpm="128.14" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="381.823" Bpm="128.14" Metro="4/4" Battito="2"/>
+    </TRACK>
+    <TRACK TrackID="131010879" Name="Lady - Hear Me Tonight" Artist="Modjo Band"
+           Composer="" Album="Modjo Band (Remastered)" Grouping="" Genre=""
+           Kind="FLAC File" Size="61455114" TotalTime="306" DiscNumber="0"
+           TrackNumber="3" Year="2001" AverageBpm="126.02" DateAdded="2025-09-09"
+           BitRate="0" SampleRate="48000" Comments="" PlayCount="0" Rating="0"
+           Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Modjo%20Band%20-%20%20Lady%20-%20Hear%20Me%20Tonight.flac"
+           Remixer="" Tonality="3B" Label="" Mix="">
+      <TEMPO Inizio="0.180" Bpm="126.02" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="1.133" Bpm="126.02" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="59.218" Bpm="126.02" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="117.303" Bpm="126.02" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="179.673" Bpm="126.02" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="242.043" Bpm="126.02" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="304.413" Bpm="126.02" Metro="4/4" Battito="4"/>
+    </TRACK>
+    <TRACK TrackID="37420917" Name="Little Lucille" Artist="Karmic" Composer=""
+           Album="Little Lucille" Grouping="" Genre="" Kind="FLAC File"
+           Size="39352807" TotalTime="198" DiscNumber="0" TrackNumber="1"
+           Year="2019" AverageBpm="111.00" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Karmic%20-%20%20Little%20Lucille.flac"
+           Remixer="" Tonality="4A" Label="" Mix="">
+      <TEMPO Inizio="0.031" Bpm="111.00" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="228221758" Name="Feeling for You" Artist="Cassius" Composer=""
+           Album="1999 (Deluxe Edition)" Grouping="" Genre="" Kind="FLAC File"
+           Size="59387795" TotalTime="277" DiscNumber="0" TrackNumber="2"
+           Year="1999" AverageBpm="133.01" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Cassius%20-%20%20Feeling%20for%20You.flac"
+           Remixer="" Tonality="10A" Label="" Mix="">
+      <TEMPO Inizio="0.369" Bpm="133.01" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="26.533" Bpm="133.01" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="57.659" Bpm="133.01" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="88.785" Bpm="133.01" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="119.911" Bpm="133.01" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="151.037" Bpm="133.01" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="182.163" Bpm="133.01" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="213.289" Bpm="133.01" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="244.415" Bpm="133.01" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="275.541" Bpm="133.01" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="60401795" Name="U Don&apos;t Know Me (feat. Duane Harden)"
+           Artist="Armand Van Helden, Duane Harden" Composer="" Album="2 Future 4 U"
+           Grouping="" Genre="" Kind="FLAC File" Size="105488522" TotalTime="484"
+           DiscNumber="0" TrackNumber="6" Year="1998" AverageBpm="129.99"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Armand%20Van%20Helden,%20Duane%20Harden%20-%20%20U%20Don%27t%20Know%20Me%20(feat.%20Duane%20Harden).flac"
+           Remixer="" Tonality="6A" Label="" Mix="">
+      <TEMPO Inizio="0.047" Bpm="129.99" Metro="4/4" Battito="4"/>
+    </TRACK>
+    <TRACK TrackID="18137508" Name="Cassius 1999 (Radio Edit)" Artist="Cassius"
+           Composer="" Album="1999 (Deluxe Edition)" Grouping="" Genre=""
+           Kind="FLAC File" Size="45921595" TotalTime="221" DiscNumber="0"
+           TrackNumber="16" Year="1999" AverageBpm="127.02" DateAdded="2025-09-09"
+           BitRate="0" SampleRate="48000" Comments="" PlayCount="0" Rating="0"
+           Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Cassius%20-%20%20Cassius%201999%20(Radio%20Edit).flac"
+           Remixer="" Tonality="9A" Label="" Mix="">
+      <TEMPO Inizio="0.267" Bpm="127.02" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="21.524" Bpm="127.02" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="71.123" Bpm="127.02" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="115.526" Bpm="127.02" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="165.125" Bpm="127.02" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="209.528" Bpm="127.02" Metro="4/4" Battito="4"/>
+    </TRACK>
+    <TRACK TrackID="67323766" Name="Your Love" Artist="Frankie Knuckles, Jamie Principle"
+           Composer="" Album="Four Most Cuts Presents - Frankie Knuckles vs. Mr Fingers"
+           Grouping="" Genre="" Kind="FLAC File" Size="84973635" TotalTime="403"
+           DiscNumber="0" TrackNumber="2" Year="1987" AverageBpm="116.92"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Frankie%20Knuckles,%20Jamie%20Principle%20-%20%20Your%20Love.flac"
+           Remixer="" Tonality="9A" Label="" Mix="">
+      <TEMPO Inizio="0.116" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="13.459" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="26.802" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="37.066" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="50.409" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="63.752" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="77.095" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="90.438" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="103.781" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="117.124" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="130.467" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="143.810" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="157.153" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="170.496" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="183.839" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="194.103" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="207.446" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="220.789" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="234.132" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="247.475" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="260.818" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="274.161" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="287.504" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="300.847" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="314.190" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="327.533" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="340.876" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="354.219" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="364.483" Bpm="116.92" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="377.826" Bpm="116.92" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="391.169" Bpm="116.92" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="155500689" Name="One More Time" Artist="Daft Punk" Composer=""
+           Album="Discovery" Grouping="" Genre="" Kind="FLAC File" Size="72463103"
+           TotalTime="320" DiscNumber="0" TrackNumber="1" Year="2001" AverageBpm="122.88"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Daft%20Punk%20-%20%20One%20More%20Time.flac"
+           Remixer="" Tonality="10B" Label="" Mix="">
+      <TEMPO Inizio="0.065" Bpm="122.88" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="120.671" Bpm="122.88" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="272.527" Bpm="122.88" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="239394636" Name="Romeo" Artist="Basement Jaxx" Composer=""
+           Album="Rooty" Grouping="" Genre="" Kind="FLAC File" Size="45431007"
+           TotalTime="217" DiscNumber="0" TrackNumber="1" Year="2001" AverageBpm="126.86"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Basement%20Jaxx%20-%20%20Romeo.flac"
+           Remixer="" Tonality="10B" Label="" Mix="">
+      <TEMPO Inizio="0.289" Bpm="126.86" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="243623798" Name="Intro - Remastered 2023" Artist="Alan Braxe, Fred Falke"
+           Composer="" Album="Running - Single" Grouping="" Genre="" Kind="FLAC File"
+           Size="65933782" TotalTime="293" DiscNumber="0" TrackNumber="4"
+           Year="2000" AverageBpm="123.91" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Alan%20Braxe,%20Fred%20Falke%20-%20%20Intro%20-%20Remastered%202023.flac"
+           Remixer="" Tonality="4A" Label="" Mix="">
+      <TEMPO Inizio="0.192" Bpm="123.91" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="165.795" Bpm="123.91" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="256466994" Name="Flat Beat - Radio Edit" Artist="Mr. Oizo"
+           Composer="" Album="Analog Worms Attack" Grouping="" Genre=""
+           Kind="FLAC File" Size="63898097" TotalTime="316" DiscNumber="0"
+           TrackNumber="15" Year="1999" AverageBpm="129.04" DateAdded="2025-09-09"
+           BitRate="0" SampleRate="48000" Comments="" PlayCount="0" Rating="0"
+           Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Mr.%20Oizo%20-%20%20Flat%20Beat%20-%20Radio%20Edit.flac"
+           Remixer="" Tonality="6B" Label="" Mix="">
+      <TEMPO Inizio="0.072" Bpm="129.04" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="4175002" Name="The Whistle Song - Re-Directed – 2019 Remaster"
+           Artist="Frankie Knuckles, Director&apos;s Cut, Eric Kupper" Composer=""
+           Album="The Whistle Song (Re-Directed)" Grouping="" Genre="" Kind="FLAC File"
+           Size="100342016" TotalTime="477" DiscNumber="0" TrackNumber="1"
+           Year="2019" AverageBpm="126.00" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Frankie%20Knuckles,%20Director%27s%20Cut,%20Eric%20Kupper%20-%20%20The%20Whistle%20Song%20-%20Re-Directed%20%e2%80%93%202019%20Remaster.flac"
+           Remixer="" Tonality="9A" Label="" Mix="">
+      <TEMPO Inizio="0.030" Bpm="126.00" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="0.983" Bpm="126.00" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="40392610" Name="Superstylin&apos;" Artist="Groove Armada"
+           Composer="" Album="Goodbye Country (Hello Nightclub)" Grouping=""
+           Genre="" Kind="FLAC File" Size="74497909" TotalTime="360" DiscNumber="0"
+           TrackNumber="2" Year="2001" AverageBpm="129.00" DateAdded="2025-09-09"
+           BitRate="0" SampleRate="48000" Comments="" PlayCount="0" Rating="0"
+           Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Groove%20Armada%20-%20%20Superstylin%27.flac"
+           Remixer="" Tonality="10A" Label="" Mix="">
+      <TEMPO Inizio="0.240" Bpm="129.00" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="64.425" Bpm="129.00" Metro="4/4" Battito="1"/>
+      <TEMPO Inizio="124.424" Bpm="129.00" Metro="4/4" Battito="2"/>
+      <TEMPO Inizio="180.702" Bpm="129.00" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="240.701" Bpm="129.00" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="292.793" Bpm="129.00" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="357.443" Bpm="129.00" Metro="4/4" Battito="3"/>
+    </TRACK>
+    <TRACK TrackID="165614524" Name="Around the World" Artist="Daft Punk"
+           Composer="" Album="Homework" Grouping="" Genre="" Kind="FLAC File"
+           Size="89138256" TotalTime="429" DiscNumber="0" TrackNumber="7"
+           Year="1997" AverageBpm="121.29" DateAdded="2025-09-09" BitRate="0"
+           SampleRate="48000" Comments="" PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Daft%20Punk%20-%20%20Around%20the%20World.flac"
+           Remixer="" Tonality="9B" Label="" Mix="">
+      <TEMPO Inizio="0.476" Bpm="121.29" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="128925801" Name="You Are My High" Artist="Demon" Composer=""
+           Album="Midnight Funk" Grouping="" Genre="" Kind="FLAC File" Size="49899907"
+           TotalTime="229" DiscNumber="0" TrackNumber="15" Year="1999" AverageBpm="120.88"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Demon%20-%20%20You%20Are%20My%20High.flac"
+           Remixer="" Tonality="9A" Label="" Mix="">
+      <TEMPO Inizio="0.068" Bpm="120.88" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="0.565" Bpm="120.88" Metro="4/4" Battito="4"/>
+      <TEMPO Inizio="87.427" Bpm="120.88" Metro="4/4" Battito="3"/>
+      <TEMPO Inizio="211.516" Bpm="120.88" Metro="4/4" Battito="1"/>
+    </TRACK>
+    <TRACK TrackID="142811101" Name="People Everyday - Metamorphosis Mix"
+           Artist="Arrested Development" Composer="" Album="Extended Revolution"
+           Grouping="" Genre="" Kind="FLAC File" Size="56921827" TotalTime="298"
+           DiscNumber="0" TrackNumber="2" Year="2003" AverageBpm="91.10"
+           DateAdded="2025-09-09" BitRate="0" SampleRate="48000" Comments=""
+           PlayCount="0" Rating="0" Location="file://localhost/Users/stuartmclean/Music/Music/Media.localized/Music/Den%20Party/Arrested%20Development%20-%20%20People%20Everyday%20-%20Metamorphosis%20Mix.flac"
+           Remixer="" Tonality="9B" Label="" Mix="">
+      <TEMPO Inizio="0.442" Bpm="91.10" Metro="4/4" Battito="1"/>
+    </TRACK>
+  </COLLECTION>
+  <PLAYLISTS>
+    <NODE Type="0" Name="ROOT" Count="4">
+      <NODE Name="One_Track" Type="1" KeyType="0" Entries="1">
+        <TRACK Key="155500689"/>
+      </NODE>
+      <NODE Name="Ten_Tracks" Type="1" KeyType="0" Entries="10">
+        <TRACK Key="21875388"/>
+        <TRACK Key="61353361"/>
+        <TRACK Key="82162455"/>
+        <TRACK Key="131010879"/>
+        <TRACK Key="37420917"/>
+        <TRACK Key="228221758"/>
+        <TRACK Key="60401795"/>
+        <TRACK Key="18137508"/>
+        <TRACK Key="67323766"/>
+        <TRACK Key="155500689"/>
+      </NODE>
+      <NODE Name="Five_Tracks" Type="1" KeyType="0" Entries="5">
+        <TRACK Key="258593490"/>
+        <TRACK Key="213765442"/>
+        <TRACK Key="233093992"/>
+        <TRACK Key="136462423"/>
+        <TRACK Key="150329395"/>
+      </NODE>
+      <NODE Name="CUE Analysis Playlist" Type="1" KeyType="0" Entries="0"/>
+    </NODE>
+  </PLAYLISTS>
+</DJ_PLAYLISTS>
