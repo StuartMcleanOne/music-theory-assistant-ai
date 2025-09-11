@@ -7,6 +7,10 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+# Global variable to store the user-defined tag limit for 'nice-to-have' categories.
+# Default is set to 2, as per our conversation.
+tag_limit = 2
+
 
 def get_db_connection():
     """
@@ -137,6 +141,8 @@ def call_llm_for_tags(track_data):
         "do not include its key in the final JSON output."
     )
 
+    global tag_limit
+
     payload = {
         "contents": [{"parts": [{"text": prompt_text}]}],
         "systemInstruction": {"parts": [{"text": system_prompt}]},
@@ -168,12 +174,12 @@ def call_llm_for_tags(track_data):
                     "components": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": 3,
+                        "maxItems": tag_limit,
                     },
                     "time_period": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": 1,
+                        "maxItems": tag_limit,
                     }
                 }
             }
@@ -342,6 +348,23 @@ def update_track(track_id):
         return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
+
+
+@app.route('/set_tag_limit', methods=['POST'])
+def set_tag_limit():
+    """
+    Sets the global tag limit for the 'nice-to-have' categories.
+    """
+    global tag_limit
+    data = request.get_json()
+    new_limit = data.get('max_tags')
+
+    if new_limit is None or not isinstance(new_limit, int) or new_limit < 0:
+        return jsonify({"error": "Invalid tag limit provided. Must be a non-negative integer."}), 400
+
+    tag_limit = new_limit
+    print(f"Tag limit successfully updated to: {tag_limit}")
+    return jsonify({"message": f"Tag limit updated to {tag_limit}"}), 200
 
 
 @app.route('/upload_library', methods=['POST'])
