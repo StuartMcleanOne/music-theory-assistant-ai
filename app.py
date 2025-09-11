@@ -8,8 +8,8 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Global variable to store the user-defined tag limit for 'nice-to-have' categories.
-# Default is set to 2, as per our conversation.
-tag_limit = 2
+# Default is set to 1 for the 'Essential' level.
+tag_limit = 1
 
 
 def get_db_connection():
@@ -29,35 +29,19 @@ def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-                   CREATE TABLE IF NOT EXISTS tracks
-                   (
-                       id
-                       INTEGER
-                       PRIMARY
-                       KEY
-                       AUTOINCREMENT,
-                       name
-                       TEXT
-                       NOT
-                       NULL,
-                       artist
-                       TEXT,
-                       bpm
-                       REAL,
-                       track_key
-                       TEXT,
-                       genre
-                       TEXT,
-                       label
-                       TEXT,
-                       comments
-                       TEXT,
-                       grouping
-                       TEXT,
-                       tags
-                       TEXT
-                   );
-                   """)
+        CREATE TABLE IF NOT EXISTS tracks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            artist TEXT,
+            bpm REAL,
+            track_key TEXT,
+            genre TEXT,
+            label TEXT,
+            comments TEXT,
+            grouping TEXT,
+            tags TEXT
+        );
+    """)
     conn.commit()
     conn.close()
     print('Database initialized successfully.')
@@ -136,12 +120,15 @@ def call_llm_for_tags(track_data):
     system_prompt = (
         "As a 'Tag Genius,' you must provide a JSON object with keys for 'primary_genre', "
         "'sub_genre', 'energy_vibe', 'situation_environment', 'components', and 'time_period'. "
-        "Each key must map to a list of strings, with a maximum of three tags per list. "
-        "Each tag should be concise and in lowercase. If a 'nice to have' category is not relevant, "
-        "do not include its key in the final JSON output."
+        "Each key must map to a list of strings. Each tag should be concise and in lowercase."
     )
 
     global tag_limit
+
+    # Dynamically set maxItems based on the global tag_limit
+    max_sub_genre = tag_limit if tag_limit > 1 else 1
+    max_energy_vibe = tag_limit if tag_limit > 1 else 1
+    max_situation_environment = tag_limit if tag_limit > 1 else 1
 
     payload = {
         "contents": [{"parts": [{"text": prompt_text}]}],
@@ -159,17 +146,17 @@ def call_llm_for_tags(track_data):
                     "sub_genre": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": 2,
+                        "maxItems": max_sub_genre,
                     },
                     "energy_vibe": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": 2,
+                        "maxItems": max_energy_vibe,
                     },
                     "situation_environment": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": 2,
+                        "maxItems": max_situation_environment,
                     },
                     "components": {
                         "type": "ARRAY",
@@ -179,7 +166,7 @@ def call_llm_for_tags(track_data):
                     "time_period": {
                         "type": "ARRAY",
                         "items": {"type": "STRING"},
-                        "maxItems": tag_limit,
+                        "maxItems": 1, # This is a static value as per your detailed breakdown
                     }
                 }
             }
@@ -284,7 +271,7 @@ def get_track(track_id):
     track_dict = dict(track)
     if track_dict.get('tags'):
         try:
-            track_dict['tags'] = json.loads(track_dict['tags'])
+            track_dict['tags'] = json.loads(track['tags'])
         except json.JSONDecodeError:
             track_dict['tags'] = {"error": "Invalid JSON"}
 
