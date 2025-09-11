@@ -4,6 +4,9 @@ import xml.etree.ElementTree as ET
 import json
 import requests
 from flask import Flask, jsonify, request
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -29,19 +32,35 @@ def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS tracks (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            artist TEXT,
-            bpm REAL,
-            track_key TEXT,
-            genre TEXT,
-            label TEXT,
-            comments TEXT,
-            grouping TEXT,
-            tags TEXT
-        );
-    """)
+                   CREATE TABLE IF NOT EXISTS tracks
+                   (
+                       id
+                       INTEGER
+                       PRIMARY
+                       KEY
+                       AUTOINCREMENT,
+                       name
+                       TEXT
+                       NOT
+                       NULL,
+                       artist
+                       TEXT,
+                       bpm
+                       REAL,
+                       track_key
+                       TEXT,
+                       genre
+                       TEXT,
+                       label
+                       TEXT,
+                       comments
+                       TEXT,
+                       grouping
+                       TEXT,
+                       tags
+                       TEXT
+                   );
+                   """)
     conn.commit()
     conn.close()
     print('Database initialized successfully.')
@@ -90,9 +109,9 @@ def call_llm_for_tags(track_data):
     Returns:
         dict: A dictionary of generated tags, categorized by type.
     """
-    api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
-        print("GEMINI_API_KEY environment variable not set. Using mock tags.")
+        print("OPENAI_API_KEY environment variable not set. Using mock tags.")
         return {
             "primary_genre": ["techno"],
             "sub_genre": ["hard techno", "industrial"],
@@ -102,88 +121,47 @@ def call_llm_for_tags(track_data):
             "time_period": ["2010s"]
         }
 
-    # This prompt tells the LLM to adopt the persona of a "smart curator"
-    # and outlines the tagging process with more active, engaging language.
+    global tag_limit
+
+    # The prompt now explicitly asks for a specific number of tags for each category,
+    # controlled by the user-defined tag_limit.
     prompt_text = (
         f"You are a master music curator and a 'Tag Genius.' Your mission is to provide concise, "
-        f"structured, and expertly curated tags for a DJ's library. Every tag you provide should "
-        f"be a deliberate choice, not a random suggestion. Here is a track for you to tag:\n\n"
+        f"structured, and expertly curated tags for a DJ's library. For each category, "
+        f"provide exactly {tag_limit} tags unless a category has fewer relevant tags, in which "
+        f"case provide all of them. Here is a track for you to tag:\n\n"
         f"Track: '{track_data.get('ARTIST')} - {track_data.get('TITLE')}'\n"
         f"Existing Genre: {track_data.get('GENRE')}\n"
         f"Year: {track_data.get('YEAR')}\n\n"
-        f"Your task is to provide tags in the following categories, prioritizing the first four "
-        f"as they are the most critical for a DJ's workflow. Only include 'components' and "
-        f"'time_period' if they are highly relevant and genuinely add value to the track's description."
+        f"Your task is to provide tags as a JSON object with the following keys: 'primary_genre', "
+        f"'sub_genre', 'energy_vibe', 'situation_environment', 'components', and 'time_period'. "
+        f"Each key must map to a list of strings. Each tag should be concise and in lowercase. "
+        f"Only include 'components' and 'time_period' if they are highly relevant and "
+        f"genuinely add value. Respond with a JSON object only, no additional text."
     )
 
-    # This system prompt reinforces the persona and sets the technical constraints of the output.
-    system_prompt = (
-        "As a 'Tag Genius,' you must provide a JSON object with keys for 'primary_genre', "
-        "'sub_genre', 'energy_vibe', 'situation_environment', 'components', and 'time_period'. "
-        "Each key must map to a list of strings. Each tag should be concise and in lowercase."
-    )
-
-    global tag_limit
-
-    # Dynamically set maxItems based on the global tag_limit
-    max_sub_genre = tag_limit if tag_limit > 1 else 1
-    max_energy_vibe = tag_limit if tag_limit > 1 else 1
-    max_situation_environment = tag_limit if tag_limit > 1 else 1
-
-    payload = {
-        "contents": [{"parts": [{"text": prompt_text}]}],
-        "systemInstruction": {"parts": [{"text": system_prompt}]},
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "responseSchema": {
-                "type": "OBJECT",
-                "properties": {
-                    "primary_genre": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": 1,
-                    },
-                    "sub_genre": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": max_sub_genre,
-                    },
-                    "energy_vibe": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": max_energy_vibe,
-                    },
-                    "situation_environment": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": max_situation_environment,
-                    },
-                    "components": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": tag_limit,
-                    },
-                    "time_period": {
-                        "type": "ARRAY",
-                        "items": {"type": "STRING"},
-                        "maxItems": 1, # This is a static value as per your detailed breakdown
-                    }
-                }
-            }
-        }
-    }
+    api_url = "https://api.openai.com/v1/chat/completions"
 
     headers = {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
     }
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={api_key}"
+
+    # The payload is structured for the OpenAI Chat Completions API.
+    payload = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {"role": "user", "content": prompt_text}
+        ],
+        "response_format": {"type": "json_object"}
+    }
 
     try:
-        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        response = requests.post(api_url, headers=headers, data=json.dumps(payload))
         response.raise_for_status()
         api_result = response.json()
 
-        text_part = api_result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text")
+        text_part = api_result.get("choices", [{}])[0].get("message", {}).get("content")
 
         if text_part:
             generated_data = json.loads(text_part)
