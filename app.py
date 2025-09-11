@@ -32,38 +32,23 @@ def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-                   CREATE TABLE IF NOT EXISTS tracks
-                   (
-                       id
-                       INTEGER
-                       PRIMARY
-                       KEY
-                       AUTOINCREMENT,
-                       name
-                       TEXT
-                       NOT
-                       NULL,
-                       artist
-                       TEXT,
-                       bpm
-                       REAL,
-                       track_key
-                       TEXT,
-                       genre
-                       TEXT,
-                       label
-                       TEXT,
-                       comments
-                       TEXT,
-                       grouping
-                       TEXT,
-                       tags
-                       TEXT
-                   );
-                   """)
+        CREATE TABLE IF NOT EXISTS tracks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            artist TEXT,
+            bpm REAL,
+            track_key TEXT,
+            genre TEXT,
+            label TEXT,
+            comments TEXT,
+            grouping TEXT,
+            tags TEXT
+        );
+    """)
     conn.commit()
     conn.close()
     print('Database initialized successfully.')
+
 
 
 def insert_track_data(name, artist, bpm, track_key, genre, label, comments, grouping, tags):
@@ -99,12 +84,44 @@ def insert_track_data(name, artist, bpm, track_key, genre, label, comments, grou
         conn.close()
 
 
+def call_lexicon_api(artist, name):
+    """
+    Calls the Lexicon Local API to get enriched track data.
+
+    This function now uses the `/search/tracks` endpoint for a more
+    direct and efficient search, as specified in the Lexicon API reference.
+    """
+    api_url = 'http://localhost:48624/v1/search/tracks'
+
+    try:
+        # Use the /search/tracks endpoint with filter parameters.
+        params = {
+            "filter": {
+                "artist": artist,
+                "title": name
+            }
+        }
+        response = requests.get(api_url, json=params)
+        response.raise_for_status()
+        lexicon_data = response.json()
+
+        # Return the first matching track if found, otherwise an empty dict.
+        tracks = lexicon_data.get('tracks', [])
+        return tracks[0] if tracks else {}
+
+    except requests.exceptions.RequestException as e:
+        print(f"Lexicon API call failed: {e}")
+        return {}
+
+
 def call_llm_for_tags(track_data):
     """
-    Calls an LLM to generate a structured set of tags for a music track.
+    Calls an LLM to generate a structured set of tags for a music track,
+    using enriched data from Lexicon.
 
     Args:
-        track_data (dict): A dictionary containing track metadata.
+        track_data (dict): A dictionary containing track metadata, including
+                           any data enriched by Lexicon.
 
     Returns:
         dict: A dictionary of generated tags, categorized by type.
@@ -132,7 +149,8 @@ def call_llm_for_tags(track_data):
         f"case provide all of them. Here is a track for you to tag:\n\n"
         f"Track: '{track_data.get('ARTIST')} - {track_data.get('TITLE')}'\n"
         f"Existing Genre: {track_data.get('GENRE')}\n"
-        f"Year: {track_data.get('YEAR')}\n\n"
+        f"Year: {track_data.get('YEAR')}\n"
+        f"Lexicon Data: {json.dumps(track_data.get('lexicon_data', {}))}\n\n"
         f"Your task is to provide tags as a JSON object with the following keys: 'primary_genre', "
         f"'sub_genre', 'energy_vibe', 'situation_environment', 'components', and 'time_period'. "
         f"Each key must map to a list of strings. Each tag should be concise and in lowercase. "
@@ -329,7 +347,7 @@ def set_tag_limit():
 
     tag_limit = new_limit
     print(f"Tag limit successfully updated to: {tag_limit}")
-    return jsonify({"message": f"Tag limit updated to {tag_limit}"}), 200
+    return jsonify({"message": f"Tag limit updated to {new_limit}"}), 200
 
 
 @app.route('/upload_library', methods=['POST'])
@@ -380,13 +398,19 @@ def process_library(xml_path):
             comments = track.get('Comments')
             grouping = track.get('Grouping')
 
-            # This is the updated section where we call the LLM for structured tags
+            # First, call the Lexicon API to enrich the track data
+            lexicon_data = call_lexicon_api(artist, track_name)
+
+            # Combine the original XML data with the enriched data from Lexicon
             track_data = {
                 'ARTIST': artist,
                 'TITLE': track_name,
                 'GENRE': genre,
-                'YEAR': track.get('Year')
+                'YEAR': track.get('Year'),
+                'lexicon_data': lexicon_data
             }
+
+            # Now, call the LLM for structured tags using the enriched data
             generated_tags = call_llm_for_tags(track_data)
             tags_string = json.dumps(generated_tags)
 
