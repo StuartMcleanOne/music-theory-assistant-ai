@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, request
-import xml.etree.ElementTree as ET
-import sqlite3
 import os
+import sqlite3
+import xml.etree.ElementTree as ET
+import json
+import requests
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -23,19 +25,35 @@ def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS tracks (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            artist TEXT,
-            bpm REAL,
-            track_key TEXT,
-            genre TEXT,
-            label TEXT,
-            comments TEXT,
-            grouping TEXT,
-            tags TEXT
-        );
-    """)
+                   CREATE TABLE IF NOT EXISTS tracks
+                   (
+                       id
+                       INTEGER
+                       PRIMARY
+                       KEY
+                       AUTOINCREMENT,
+                       name
+                       TEXT
+                       NOT
+                       NULL,
+                       artist
+                       TEXT,
+                       bpm
+                       REAL,
+                       track_key
+                       TEXT,
+                       genre
+                       TEXT,
+                       label
+                       TEXT,
+                       comments
+                       TEXT,
+                       grouping
+                       TEXT,
+                       tags
+                       TEXT
+                   );
+                   """)
     conn.commit()
     conn.close()
     print('Database initialized successfully.')
@@ -58,10 +76,11 @@ def insert_track_data(name, artist, bpm, track_key, genre, label, comments, grou
             return
 
         # Insert the new track data into the tracks table.
+        # The 'tags' are now expected to be a JSON string.
         cursor.execute("""
-            INSERT INTO tracks (name, artist, bpm, track_key, genre, label, comments, grouping, tags)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (name, artist, bpm, track_key, genre, label, comments, grouping, tags))
+                       INSERT INTO tracks (name, artist, bpm, track_key, genre, label, comments, grouping, tags)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                       """, (name, artist, bpm, track_key, genre, label, comments, grouping, tags))
 
         conn.commit()
         print(f"Successfully inserted: {name} by {artist}")
@@ -71,6 +90,121 @@ def insert_track_data(name, artist, bpm, track_key, genre, label, comments, grou
         print(f"Database error: {e}")
     finally:
         conn.close()
+
+
+def call_llm_for_tags(track_data):
+    """
+    Calls an LLM to generate a structured set of tags for a music track.
+
+    Args:
+        track_data (dict): A dictionary containing track metadata.
+
+    Returns:
+        dict: A dictionary of generated tags, categorized by type.
+    """
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        print("GEMINI_API_KEY environment variable not set. Using mock tags.")
+        return {
+            "primary_genre": ["techno"],
+            "sub_genre": ["hard techno", "industrial"],
+            "energy_vibe": ["peak hour", "aggressive"],
+            "situation_environment": ["main floor"],
+            "components": ["vocal", "remix"],
+            "time_period": ["2010s"]
+        }
+
+    # This prompt tells the LLM to adopt the persona of a "smart curator"
+    # and outlines the tagging process with more active, engaging language.
+    prompt_text = (
+        f"You are a master music curator and a 'Tag Genius.' Your mission is to provide concise, "
+        f"structured, and expertly curated tags for a DJ's library. Every tag you provide should "
+        f"be a deliberate choice, not a random suggestion. Here is a track for you to tag:\n\n"
+        f"Track: '{track_data.get('ARTIST')} - {track_data.get('TITLE')}'\n"
+        f"Existing Genre: {track_data.get('GENRE')}\n"
+        f"Year: {track_data.get('YEAR')}\n\n"
+        f"Your task is to provide tags in the following categories, prioritizing the first four "
+        f"as they are the most critical for a DJ's workflow. Only include 'components' and "
+        f"'time_period' if they are highly relevant and genuinely add value to the track's description."
+    )
+
+    # This system prompt reinforces the persona and sets the technical constraints of the output.
+    system_prompt = (
+        "As a 'Tag Genius,' you must provide a JSON object with keys for 'primary_genre', "
+        "'sub_genre', 'energy_vibe', 'situation_environment', 'components', and 'time_period'. "
+        "Each key must map to a list of strings, with a maximum of three tags per list. "
+        "Each tag should be concise and in lowercase. If a 'nice to have' category is not relevant, "
+        "do not include its key in the final JSON output."
+    )
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt_text}]}],
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": {
+                "type": "OBJECT",
+                "properties": {
+                    "primary_genre": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 1,
+                    },
+                    "sub_genre": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 2,
+                    },
+                    "energy_vibe": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 2,
+                    },
+                    "situation_environment": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 2,
+                    },
+                    "components": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 3,
+                    },
+                    "time_period": {
+                        "type": "ARRAY",
+                        "items": {"type": "STRING"},
+                        "maxItems": 1,
+                    }
+                }
+            }
+        }
+    }
+
+    headers = {
+        "Content-Type": "application/json"
+    }
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={api_key}"
+
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        response.raise_for_status()
+        api_result = response.json()
+
+        text_part = api_result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text")
+
+        if text_part:
+            generated_data = json.loads(text_part)
+            return generated_data
+        else:
+            print("LLM response was not in the expected format.")
+            return {}
+
+    except requests.exceptions.RequestException as e:
+        print(f"API call failed: {e}")
+        return {}
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse JSON from LLM response: {e}")
+        return {}
 
 
 @app.route('/')
@@ -84,13 +218,22 @@ def hello_ai():
 @app.route('/tracks', methods=['GET'])
 def get_tracks():
     """
-    Retrieves all music tracks from the database.
+    Retrieves all music tracks from the database,
+    deserializing the 'tags' column from a JSON string to a JSON object.
     """
     conn = get_db_connection()
     tracks = conn.execute('SELECT * FROM tracks').fetchall()
     conn.close()
 
     tracks_list = [dict(row) for row in tracks]
+    for track in tracks_list:
+        if track.get('tags'):
+            try:
+                track['tags'] = json.loads(track['tags'])
+            except json.JSONDecodeError:
+                # Handle cases where tags might not be valid JSON
+                track['tags'] = {"error": "Invalid JSON"}
+
     return jsonify(tracks_list)
 
 
@@ -132,7 +275,14 @@ def get_track(track_id):
     if track is None:
         return jsonify({"error": "Track not found"}), 404
 
-    return jsonify(dict(track))
+    track_dict = dict(track)
+    if track_dict.get('tags'):
+        try:
+            track_dict['tags'] = json.loads(track_dict['tags'])
+        except json.JSONDecodeError:
+            track_dict['tags'] = {"error": "Invalid JSON"}
+
+    return jsonify(track_dict)
 
 
 @app.route('/tracks/<int:track_id>', methods=['DELETE'])
@@ -242,12 +392,15 @@ def process_library(xml_path):
             comments = track.get('Comments')
             grouping = track.get('Grouping')
 
-            tags_element = track.find('TAGS')
-            tags = []
-            if tags_element is not None:
-                for tag in tags_element.findall('TAG'):
-                    tags.append(tag.get('NAME'))
-            tags_string = ', '.join(tags)
+            # This is the updated section where we call the LLM for structured tags
+            track_data = {
+                'ARTIST': artist,
+                'TITLE': track_name,
+                'GENRE': genre,
+                'YEAR': track.get('Year')
+            }
+            generated_tags = call_llm_for_tags(track_data)
+            tags_string = json.dumps(generated_tags)
 
             # Insert the track data into the database
             insert_track_data(track_name, artist, bpm, track_key, genre, label, comments, grouping, tags_string)
