@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Genius</title>
+    <!-- Use Tailwind CSS for a modern, clean look -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font for legibility and style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom styling for the slider track */
+        .slider-track {
+            height: 6px;
+            background-color: #e5e7eb; /* A soft grey */
+            position: relative;
+            border-radius: 9999px;
+            cursor: pointer;
+        }
+        /* Custom styling for the slider thumb */
+        .slider-thumb {
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            border: 2px solid #3b82f6; /* A clean blue pop of color */
+            border-radius: 9999px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: left 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main application container with a paper-like white background -->
+    <div class="w-full max-w-2xl bg-white p-8 md:p-10 rounded-xl shadow-lg border border-gray-200">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-2 tracking-tight">Tag Genius</h1>
+            <p class="text-lg text-gray-500">Intelligent music library management</p>
+        </header>
+
+        <!-- File Upload Section -->
+        <section class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50 transition-colors duration-200 hover:bg-gray-100" id="drop-area">
+            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="mt-2 text-sm text-gray-600"><span class="font-medium text-blue-600">Drag and drop</span> your music files here, or <label for="file-upload" class="relative cursor-pointer font-medium text-blue-600 hover:text-blue-500">browse</label></p>
+            <input id="file-upload" name="file-upload" type="file" class="sr-only" accept=".xml">
+        </section>
+
+        <!-- Tagging Options Section -->
+        <section class="mt-8">
+            <h2 class="text-xl font-medium text-gray-800 mb-6">Tagging Detail Level</h2>
+
+            <!-- Slider container -->
+            <div class="relative w-full">
+                <!-- Slider track -->
+                <div class="slider-track rounded-full" id="slider-track">
+                    <div class="slider-thumb" id="slider-thumb"></div>
+                </div>
+                <!-- Labels for the slider positions -->
+                <div class="flex justify-between mt-3 text-sm text-gray-500">
+                    <span class="text-blue-600 font-medium transition-colors duration-300" id="label-essential">Essential</span>
+                    <span class="transition-colors duration-300" id="label-recommended">Recommended</span>
+                    <span class="transition-colors duration-300" id="label-detailed">Detailed</span>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-sm mt-4 text-center leading-relaxed" id="description">
+                Only receive the core tags (e.g., genre and energy). Components and time period tags will be omitted.
+            </p>
+        </section>
+
+        <!-- Action Button -->
+        <div class="mt-10 text-center flex flex-col sm:flex-row justify-center gap-4">
+            <button class="bg-gray-800 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300" id="start-tagging-button">
+                Start Tagging
+            </button>
+            <button class="bg-blue-600 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300 hidden" id="export-button">
+                Export XML
+            </button>
+            <button class="bg-red-500 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 hidden" id="clear-tags-button">
+                Clear Tags
+            </button>
+        </div>
+        <div id="status-message" class="mt-4 text-sm font-semibold text-gray-600 text-center hidden"></div>
+
+    </div>
+
+    <script>
+        const fileUploadInput = document.getElementById('file-upload');
+        const sliderTrack = document.getElementById('slider-track');
+        const sliderThumb = document.getElementById('slider-thumb');
+        const startButton = document.getElementById('start-tagging-button');
+        const exportButton = document.getElementById('export-button');
+        const clearTagsButton = document.getElementById('clear-tags-button');
+        const dropArea = document.getElementById('drop-area');
+        const statusMessage = document.getElementById('status-message');
+        const labels = {
+            essential: document.getElementById('label-essential'),
+            recommended: document.getElementById('label-recommended'),
+            detailed: document.getElementById('label-detailed')
+        };
+        const description = document.getElementById('description');
+
+        let isDragging = false;
+        let currentPositionIndex = 0;
+        const positions = [0, 50, 100]; // Percentage positions for the thumb
+
+        const tagConfigurations = [
+            { level: 'essential', primary_genre: 1, sub_genre: 1, energy_vibe: 1, situation_environment: 1, components: 1, time_period: 1 },
+            { level: 'recommended', primary_genre: 1, sub_genre: 2, energy_vibe: 3, situation_environment: 2, components: 3, time_period: 1 },
+            { level: 'detailed', primary_genre: 1, sub_genre: 4, energy_vibe: 5, situation_environment: 4, components: 4, time_period: 1 }
+        ];
+
+        const descriptions = [
+            'Receive only the core tags like primary genre and overall vibe. Perfect for quick, high-level organization.',
+            'Receive a balanced set of tags, including a few key sub-genres and moods. A great balance for most libraries.',
+            'Generate a comprehensive list of tags, including multiple sub-genres, moods, and key components, for in-depth library analysis.'
+        ];
+
+        const colors = {
+            active: 'text-blue-600 font-medium',
+            inactive: 'text-gray-500'
+        };
+
+        // Initialize to the first position
+        updateSlider(currentPositionIndex);
+
+        function updateSlider(index) {
+            const position = positions[index];
+            sliderThumb.style.left = `${position}%`;
+
+            // Update labels and description based on the new position
+            labels.essential.className = index === 0 ? colors.active : colors.inactive;
+            labels.recommended.className = index === 1 ? colors.active : colors.inactive;
+            labels.detailed.className = index === 2 ? colors.active : colors.inactive;
+            description.textContent = descriptions[index];
+            currentPositionIndex = index;
+        }
+
+        // Click to set position
+        sliderTrack.addEventListener('click', (e) => {
+            const rect = sliderTrack.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percentage = (x / rect.width) * 100;
+            let closestIndex = 0;
+            let minDistance = Math.abs(percentage - positions[0]);
+
+            for (let i = 1; i < positions.length; i++) {
+                const distance = Math.abs(percentage - positions[i]);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = i;
+                }
+            }
+            updateSlider(closestIndex);
+        });
+
+        // Drag functionality
+        sliderThumb.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            document.body.style.userSelect = 'none'; // Prevent text selection while dragging
+            e.preventDefault(); // Prevent default browser drag behavior
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                document.body.style.userSelect = ''; // Re-enable text selection
+                // Snap to the closest position after dragging
+                const rect = sliderTrack.getBoundingClientRect();
+                const currentLeft = parseFloat(sliderThumb.style.left);
+                let closestIndex = 0;
+                let minDistance = Math.abs(currentLeft - positions[0]);
+
+                for (let i = 1; i < positions.length; i++) {
+                    const distance = Math.abs(currentLeft - positions[i]);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestIndex = i;
+                    }
+                }
+                updateSlider(closestIndex);
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const rect = sliderTrack.getBoundingClientRect();
+            let newLeft = e.clientX - rect.left;
+
+            // Clamp newLeft within the track boundaries
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft > rect.width) newLeft = rect.width;
+
+            const newPercentage = (newLeft / rect.width) * 100;
+            sliderThumb.style.left = `${newPercentage}%`;
+        });
+
+        // Handle file drop events
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.add('bg-blue-50');
+        });
+
+        dropArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.remove('bg-blue-50');
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.remove('bg-blue-50');
+            // Here you would process the files (e.g., e.dataTransfer.files)
+            if (e.dataTransfer.files.length > 0) {
+                fileUploadInput.files = e.dataTransfer.files;
+                console.log(e.dataTransfer.files);
+            }
+        });
+
+        // Handle file input change
+        fileUploadInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                console.log(e.target.files);
+            }
+        });
+
+        // Handle the "Start Tagging" button click to update the backend
+        startButton.addEventListener('click', async () => {
+            const files = fileUploadInput.files;
+            if (files.length === 0) {
+                statusMessage.textContent = 'Please select a file to upload.';
+                statusMessage.classList.remove('hidden');
+                statusMessage.classList.remove('text-green-600', 'text-red-600');
+                statusMessage.classList.add('text-gray-600');
+                return;
+            }
+
+            const file = files[0];
+            const selectedConfig = tagConfigurations[currentPositionIndex];
+
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('config', JSON.stringify(selectedConfig));
+
+            try {
+                // Next, upload the XML file
+                statusMessage.textContent = 'Uploading and processing file... This may take a moment.';
+                const uploadResponse = await fetch('/upload_library', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!uploadResponse.ok) {
+                    throw new Error(`Failed to upload file: ${uploadResponse.status}`);
+                }
+
+                const result = await uploadResponse.json();
+                console.log('Backend response:', result.message);
+
+                statusMessage.textContent = result.message || 'File processed successfully!';
+                statusMessage.classList.remove('text-gray-600', 'text-red-600');
+                statusMessage.classList.add('text-green-600');
+
+                // Show the other buttons after a successful tagging process
+                exportButton.classList.remove('hidden');
+                clearTagsButton.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.textContent = `Error: ${error.message}`;
+                statusMessage.classList.remove('text-gray-600', 'text-green-600');
+                statusMessage.classList.add('text-red-600');
+            }
+        });
+
+        // Handle Export XML button click
+        exportButton.addEventListener('click', async () => {
+            statusMessage.textContent = 'Exporting XML file...';
+            statusMessage.classList.remove('hidden');
+
+            try {
+                const response = await fetch('/export_xml', {
+                    method: 'GET'
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'tagged_library.xml'; // Filename for download
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+
+                    statusMessage.textContent = 'XML file exported successfully!';
+                    statusMessage.classList.remove('text-gray-600', 'text-red-600');
+                    statusMessage.classList.add('text-green-600');
+                } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Failed to export XML file.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.textContent = `Error: ${error.message}`;
+                statusMessage.classList.remove('text-gray-600', 'text-green-600');
+                statusMessage.classList.add('text-red-600');
+            }
+        });
+
+        // Handle Clear Tags button click
+        clearTagsButton.addEventListener('click', async () => {
+            statusMessage.textContent = 'Clearing generated tags...';
+            statusMessage.classList.remove('hidden');
+
+            try {
+                const response = await fetch('/clear_tags', {
+                    method: 'PUT'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMessage.textContent = result.message || 'Tags cleared successfully!';
+                    statusMessage.classList.remove('text-gray-600', 'text-red-600');
+                    statusMessage.classList.add('text-green-600');
+
+                    // Hide the export and clear buttons after clearing tags
+                    exportButton.classList.add('hidden');
+                    clearTagsButton.classList.add('hidden');
+
+                } else {
+                    throw new Error(result.error || 'Failed to clear tags.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                statusMessage.textContent = `Error: ${error.message}`;
+                statusMessage.classList.remove('text-gray-600', 'text-green-600');
+                statusMessage.classList.add('text-red-600');
+            }
+        });
+    </script>
+</body>
+</html>
